@@ -1,0 +1,2 @@
+class_name Collect_Area
+extends Area2D

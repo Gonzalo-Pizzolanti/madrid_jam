@@ -1,0 +1,2 @@
+class_name Battery_Range_Getter
+extends Area2D

@@ -1,11 +1,22 @@
 class_name Player
 extends CharacterBody2D
 
-@export_enum("Slow:800", "Average:1000", "Fast:1200") var speed: int
+@export_enum("Slow:800", "Average:1000", "Fast:1200") var speed: int : set = set_speed
 @onready var steerComponent: SteerComponent = $SteerComponent
 
 var is_hover: bool = false
 const mass: float = 10
+
+func set_speed(new_speed: int):
+	const min_number_speed = 0
+	if speed <= min_number_speed:
+		print('END OF SPEED', speed, min_number_speed)
+	speed = new_speed
+	print(speed)
+	
+func substract_speed(amount_speed_substract: int) -> void:
+	var new_speed = speed - amount_speed_substract
+	set_speed(new_speed)
 
 func _process(_delta: float) -> void:
 	queue_redraw()
@@ -30,3 +41,8 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	is_hover = false
+
+
+func _on_timer_energy_timeout() -> void:
+	const amount_energy_substraction = 100
+	substract_speed(amount_energy_substraction)

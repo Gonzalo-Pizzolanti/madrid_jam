@@ -1,26 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd3kp3tkn7kna"]
+[gd_scene load_steps=8 format=3 uid="uid://bd3kp3tkn7kna"]
 
 [ext_resource type="Script" uid="uid://c4ibv4tqi21wu" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bsyn1bppmxkb7" path="res://icon.svg" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://dgnwsfkpde12v" path="res://Scripts/Components/steer.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://c43gwas4bugrl" path="res://Scripts/collect_area.gd" id="4_vgqql"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
-radius = 138.521
+radius = 131.548
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 86.7295
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
+radius = 193.458
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
 input_pickable = true
 script = ExtResource("1_cvnsp")
 
+[node name="timer_energy" type="Timer" parent="."]
+autostart = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cvnsp")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="movement_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="movement_area"]
 shape = SubResource("CircleShape2D_6t5aa")
 debug_color = Color(0.828975, 0.341365, 0.520172, 0.42)
 
@@ -31,5 +38,13 @@ texture = ExtResource("2_6t5aa")
 script = ExtResource("3_6t5aa")
 metadata/_custom_type_script = "uid://dgnwsfkpde12v"
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="collect_area" type="Area2D" parent="."]
+script = ExtResource("4_vgqql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collect_area"]
+shape = SubResource("CircleShape2D_vgqql")
+debug_color = Color(0.862845, 0.199928, 0.736307, 0.42)
+
+[connection signal="timeout" from="timer_energy" to="." method="_on_timer_energy_timeout"]
+[connection signal="mouse_entered" from="movement_area" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="movement_area" to="." method="_on_area_2d_mouse_exited"]

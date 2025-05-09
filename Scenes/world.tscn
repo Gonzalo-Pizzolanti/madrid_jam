@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cup3il6c8ldjo"]
+[gd_scene load_steps=3 format=3 uid="uid://cup3il6c8ldjo"]
 
+[ext_resource type="PackedScene" uid="uid://qxgotddilv0m" path="res://Scenes/battery.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://bd3kp3tkn7kna" path="res://Scenes/player.tscn" id="2_go701"]
 
 [node name="World" type="Node2D"]
@@ -8,4 +9,22 @@ position = Vector2(2, 0)
 [node name="Player" parent="." instance=ExtResource("2_go701")]
 position = Vector2(594, 303)
 scale = Vector2(0.5, 0.5)
-speed = 1200
+speed = 1000
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Battery" parent="Items" instance=ExtResource("1_go701")]
+position = Vector2(218, 145)
+scale = Vector2(0.5, 0.5)
+
+[node name="Battery2" parent="Items" instance=ExtResource("1_go701")]
+position = Vector2(985, 460)
+scale = Vector2(0.5, 0.5)
+
+[node name="Battery3" parent="Items" instance=ExtResource("1_go701")]
+position = Vector2(900, 129)
+scale = Vector2(0.5, 0.5)
+
+[node name="Battery4" parent="Items" instance=ExtResource("1_go701")]
+position = Vector2(297, 502)
+scale = Vector2(0.5, 0.5)

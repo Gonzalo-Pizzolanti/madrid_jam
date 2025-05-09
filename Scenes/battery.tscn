@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://qxgotddilv0m"]
+
+[ext_resource type="Script" uid="uid://bcsqmr36rjcmd" path="res://Scripts/battery.gd" id="1_23u8t"]
+[ext_resource type="Texture2D" uid="uid://bsyn1bppmxkb7" path="res://icon.svg" id="1_mjabg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_23u8t"]
+radius = 92.0978
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjabg"]
+radius = 223.466
+
+[node name="Battery" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_23u8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_23u8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mjabg")
+
+[node name="range_getter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range_getter"]
+shape = SubResource("CircleShape2D_mjabg")
+debug_color = Color(0.732001, 0.466751, 0.195495, 0.42)
+
+[connection signal="area_entered" from="range_getter" to="." method="_on_range_getter_area_entered"]
