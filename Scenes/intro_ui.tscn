@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3ueybty0dm6"]
+
+[ext_resource type="PackedScene" uid="uid://beuab48co2of0" path="res://Scenes/Components/start_bt.tscn" id="1_w6bm0"]
+[ext_resource type="PackedScene" uid="uid://bwkwn2tr4t65t" path="res://Scenes/Components/exit_bt.tscn" id="2_blowu"]
+
+[node name="IntroUI" type="Node2D"]
+
+[node name="StartBt" parent="." instance=ExtResource("1_w6bm0")]
+offset_left = 139.0
+offset_top = 212.0
+offset_right = 396.0
+offset_bottom = 280.0
+
+[node name="ExitBt" parent="." instance=ExtResource("2_blowu")]
+offset_left = 139.0
+offset_top = 389.0
+offset_right = 396.0
+offset_bottom = 457.0
