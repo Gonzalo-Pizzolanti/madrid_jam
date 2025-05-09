@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd3kp3tkn7kna"]
+
+[ext_resource type="Script" uid="uid://c4ibv4tqi21wu" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bsyn1bppmxkb7" path="res://icon.svg" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://dgnwsfkpde12v" path="res://Scripts/Components/steer.gd" id="3_6t5aa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 138.521
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cvnsp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_6t5aa")
+
+[node name="SteerComponent" type="Node" parent="."]
+script = ExtResource("3_6t5aa")
+metadata/_custom_type_script = "uid://dgnwsfkpde12v"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
