@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://beuab48co2of0"]
+
+[ext_resource type="Script" uid="uid://cdhyvgb4uuj0d" path="res://Scripts/Components/UI Bt Logic/start_bt.gd" id="1_o7wqe"]
+[ext_resource type="AudioStream" uid="uid://c7tu13gmesbap" path="res://Scenes/Components/Audio/beep-sound-8333.wav" id="2_25jfl"]
+
+[node name="StartBt" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Comenzar"
+script = ExtResource("1_o7wqe")
+
+[node name="StartSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_25jfl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwkwn2tr4t65t"]
+
+[ext_resource type="Script" uid="uid://c8rj54dd6ugb8" path="res://Scripts/Components/UI Bt Logic/exit_bt.gd" id="1_7lbob"]
+[ext_resource type="AudioStream" uid="uid://c7tu13gmesbap" path="res://Scenes/Components/Audio/beep-sound-8333.wav" id="2_sh7cb"]
+
+[node name="ExitBt" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Salir del juego"
+script = ExtResource("1_7lbob")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sh7cb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
