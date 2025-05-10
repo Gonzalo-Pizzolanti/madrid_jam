@@ -11,6 +11,7 @@ const mass: float = 20
 func _process(_delta: float) -> void:
 	queue_redraw()
 
+
 func _physics_process(_delta):
 	if !is_hover:
 		$Sprite.rotation = velocity.angle()
@@ -38,6 +39,6 @@ func _on_timer_energy_timeout() -> void:
 	speed_component.remove_speed(amount_energy_substraction)
 
 
-func _on_collect_area_area_entered(area: Area2D) -> void:
+func _on_collect_area_area_entered(_area: Area2D) -> void:
 	const speed_to_add = 1200
 	speed_component.add_speed(speed_to_add)

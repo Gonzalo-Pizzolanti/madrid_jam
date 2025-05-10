@@ -48,6 +48,8 @@ shape = SubResource("CircleShape2D_vgqql")
 debug_color = Color(0.862845, 0.199928, 0.736307, 0.42)
 
 [node name="SpeedComponent" parent="." instance=ExtResource("5_fkybt")]
+INITIAL_SPEED = 800
+MAX_SPEED = 2400
 
 [connection signal="timeout" from="timer_energy" to="." method="_on_timer_energy_timeout"]
 [connection signal="mouse_entered" from="movement_area" to="." method="_on_area_2d_mouse_entered"]

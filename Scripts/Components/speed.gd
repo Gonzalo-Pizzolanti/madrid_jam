@@ -35,7 +35,7 @@ func set_speed(new_speed : int) -> void:
 	
 	else:
 		speed = new_speed
-	print("speed: ", speed)
+	#print("speed: ", speed)
 
 func add_speed(amount_sum : int) -> void:
 	speed = speed + amount_sum
