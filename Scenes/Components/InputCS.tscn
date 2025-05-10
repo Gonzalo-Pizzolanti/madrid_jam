@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj6ijc4wfxhpd"]
+
+[ext_resource type="Texture2D" uid="uid://bt1s7ug2srvbx" path="res://Scenes/Components/Images/mouse_move.png" id="1_mftge"]
+[ext_resource type="Texture2D" uid="uid://bamfdr0k00fpo" path="res://Scenes/Components/Images/keyboard_e_outline.png" id="2_qjbmd"]
+[ext_resource type="Texture2D" uid="uid://ba7agrgfati6g" path="res://Scenes/Components/Images/keyboard_escape_outline.png" id="3_jabdl"]
+[ext_resource type="Texture2D" uid="uid://b81o8ica1h3vj" path="res://Scenes/Components/Images/keyboard_q_outline.png" id="4_r4ubp"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Mouse" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+position = Vector2(898, 43)
+scale = Vector2(0.334117, 0.334117)
+texture = ExtResource("1_mftge")
+
+[node name="Label" type="Label" parent="Mouse"]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 38.9084
+offset_top = -28.9032
+offset_right = 226.908
+offset_bottom = 29.0968
+theme_override_font_sizes/font_size = 35
+text = "Mover"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyE" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+position = Vector2(994, 41)
+scale = Vector2(0.344895, 0.344895)
+texture = ExtResource("2_qjbmd")
+
+[node name="KeyEsc" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+position = Vector2(1030, 82)
+scale = Vector2(0.344895, 0.344895)
+texture = ExtResource("3_jabdl")
+
+[node name="Label" type="Label" parent="KeyEsc"]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 26.0949
+offset_top = -28.9032
+offset_right = 214.095
+offset_bottom = 29.0968
+theme_override_font_sizes/font_size = 35
+text = "Salir"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="KeyQ" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+position = Vector2(1030, 41)
+scale = Vector2(0.344895, 0.344895)
+texture = ExtResource("4_r4ubp")
+
+[node name="Label" type="Label" parent="KeyQ"]
+modulate = Color(1, 1, 1, 0.552941)
+offset_left = 60.8881
+offset_top = -29.0
+offset_right = 318.888
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 35
+text = "Interactuar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true

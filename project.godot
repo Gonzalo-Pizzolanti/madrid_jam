@@ -20,6 +20,13 @@ config/icon="res://icon.svg"
 world="*res://Scripts/world.gd"
 PlayerName="*res://Scripts/playerName.gd"
 
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
