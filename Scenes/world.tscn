@@ -5,10 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://qxgotddilv0m" path="res://Scenes/battery.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://bd3kp3tkn7kna" path="res://Scenes/player.tscn" id="2_go701"]
 [ext_resource type="AudioStream" uid="uid://bnlo8qn77rdti" path="res://Music/music_classic_radio.wav" id="5_fo5ed"]
-[ext_resource type="PackedScene" uid="uid://jh3bid74vkud" path="res://Scenes/item.tscn" id="6_5ukr8"]
 
 [node name="World" type="Node2D"]
-position = Vector2(2, 0)
 script = ExtResource("1_8j60k")
 
 [node name="Spawner_battery" parent="." instance=ExtResource("1_5a7ea")]
@@ -32,3 +30,6 @@ stream = ExtResource("5_fo5ed")
 [node name="Item" parent="." instance=ExtResource("6_5ukr8")]
 position = Vector2(241, 334)
 scale = Vector2(0.35, 0.35)
+
+[node name="GameTimer" parent="." instance=ExtResource("6_5ukr8")]
+position = Vector2(594, 19)

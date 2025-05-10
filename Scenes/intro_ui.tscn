@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv3ueybty0dm6"]
+[gd_scene load_steps=5 format=3 uid="uid://bv3ueybty0dm6"]
 
 [ext_resource type="PackedScene" uid="uid://beuab48co2of0" path="res://Scenes/Components/start_bt.tscn" id="1_w6bm0"]
 [ext_resource type="PackedScene" uid="uid://bwkwn2tr4t65t" path="res://Scenes/Components/exit_bt.tscn" id="2_blowu"]
 [ext_resource type="PackedScene" uid="uid://bxraxfpamf2v" path="res://Scenes/Components/line_edit.tscn" id="3_ejowa"]
+[ext_resource type="PackedScene" uid="uid://bj6ijc4wfxhpd" path="res://Scenes/Components/InputCS.tscn" id="4_jane2"]
 
 [node name="IntroUI" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+light_mask = 524288
+visibility_layer = 524288
+offset_left = -14.0
+offset_top = -18.0
+offset_right = 1178.0
+offset_bottom = 669.0
+color = Color(9.3855e-07, 0.363318, 0.424125, 1)
 
 [node name="StartBt" parent="." instance=ExtResource("1_w6bm0")]
 offset_left = 139.0
@@ -32,3 +42,10 @@ offset_bottom = 39.0
 text = "Tu nombre es:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InputUI" parent="." instance=ExtResource("4_jane2")]
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+
+[connection signal="ready" from="." to="LineEdit" method="_on_intro_ui_ready"]
