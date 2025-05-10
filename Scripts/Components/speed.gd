@@ -1,14 +1,19 @@
 class_name SpeedComponent
 extends Node
 
+@export_group('SPEED')
+@export var MIN_SPEED : int = 400
+@export var INITIAL_SPEED : int = 1200
+@export var MAX_SPEED : int = 3600
 
-const speed_values : Dictionary = {
-	'min': 0,
-	'default': 1200,
-	'max': 3600
+
+var speed_values : Dictionary = {
+	'min': MIN_SPEED,
+	'default': INITIAL_SPEED,
+	'max': MAX_SPEED
 }
-const default_speed : int = speed_values['default']
-const max_speed : int = speed_values['max']
+var default_speed : int = speed_values['default']
+
 
 var speed : int = default_speed: 
 	set = set_speed,
@@ -19,8 +24,8 @@ func get_speed():
 	return speed
 
 func set_speed(new_speed : int) -> void:
-	const max_speed = speed_values['max']
-	const min_speed = speed_values['min']
+	var max_speed = speed_values['max']
+	var min_speed = speed_values['min']
 	
 	if new_speed < min_speed:
 		speed = min_speed
