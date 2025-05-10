@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpq1xgt7hokqn"]
+
+[ext_resource type="Script" uid="uid://2fwki5ky5b2r" path="res://Scripts/game_timer.gd" id="1_qxk6v"]
+[ext_resource type="AudioStream" uid="uid://c7tu13gmesbap" path="res://Scenes/Components/Audio/beep-sound-8333.wav" id="2_j2gkn"]
+
+[node name="GameTimer" type="Node2D"]
+script = ExtResource("1_qxk6v")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 30
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j2gkn")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

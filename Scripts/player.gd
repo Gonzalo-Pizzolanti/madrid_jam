@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @onready var steerComponent: SteerComponent = $SteerComponent
+@onready var abs_pos_arrow: Node2D = $AbsPosArrow
 
 var is_hover: bool = false
 const mass: float = 20
@@ -10,6 +11,7 @@ const mass: float = 20
 
 func _process(_delta: float) -> void:
 	queue_redraw()
+	abs_pos_arrow.look_at(get_global_mouse_position())
 
 func _physics_process(_delta):
 	if !is_hover:
