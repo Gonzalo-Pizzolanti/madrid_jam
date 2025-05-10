@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cup3il6c8ldjo"]
+[gd_scene load_steps=8 format=3 uid="uid://cup3il6c8ldjo"]
 
 [ext_resource type="PackedScene" uid="uid://dif1ktcx67lst" path="res://Scenes/spawner_battery.tscn" id="1_5a7ea"]
 [ext_resource type="Script" uid="uid://dt00iyw4gh1jt" path="res://Scripts/world.gd" id="1_8j60k"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bd3kp3tkn7kna" path="res://Scenes/player.tscn" id="2_go701"]
 [ext_resource type="AudioStream" uid="uid://bnlo8qn77rdti" path="res://Music/music_classic_radio.wav" id="5_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://dpq1xgt7hokqn" path="res://Scenes/game_timer.tscn" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://dnkpkrvc3xwni" path="res://Scenes/dialog_preset.tscn" id="7_o06y3"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_8j60k")
@@ -30,3 +31,5 @@ stream = ExtResource("5_fo5ed")
 
 [node name="GameTimer" parent="." instance=ExtResource("6_5ukr8")]
 position = Vector2(594, 19)
+
+[node name="DialogPreset" parent="." instance=ExtResource("7_o06y3")]

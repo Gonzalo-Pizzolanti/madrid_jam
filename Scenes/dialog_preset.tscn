@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnkpkrvc3xwni"]
+
+[ext_resource type="Texture2D" uid="uid://ck2sdr2qccvxi" path="res://Sprites/simon in process1.png" id="1_6h74l"]
+[ext_resource type="Texture2D" uid="uid://de4vhbi4nhbmi" path="res://Sprites/divider-fade-000.png" id="2_esjdr"]
+
+[node name="DialogPreset" type="Node2D"]
+
+[node name="Saimon" type="Sprite2D" parent="."]
+position = Vector2(-87, 776)
+scale = Vector2(0.462125, 0.462125)
+texture = ExtResource("1_6h74l")
+
+[node name="SaimonSounds" type="AudioStreamPlayer" parent="Saimon"]
+
+[node name="ColorRect" type="ColorRect" parent="Saimon"]
+offset_left = 251.014
+offset_top = -473.898
+offset_right = 955.014
+offset_bottom = -395.898
+scale = Vector2(1.87692, 1.87692)
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="DialogText" type="Label" parent="Saimon/ColorRect"]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 690.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 17
+text = "TEST"
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Saimon/ColorRect"]
+position = Vector2(656, 2)
+scale = Vector2(0.636364, 0.636364)
+texture = ExtResource("2_esjdr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Saimon/ColorRect"]
+position = Vector2(656, 77)
+scale = Vector2(0.636364, 0.636364)
+texture = ExtResource("2_esjdr")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Saimon/ColorRect"]
+position = Vector2(47, 2)
+rotation = -3.14159
+scale = Vector2(0.636364, 0.636364)
+texture = ExtResource("2_esjdr")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Saimon/ColorRect"]
+position = Vector2(47, 76)
+rotation = -3.14159
+scale = Vector2(0.636364, 0.636364)
+texture = ExtResource("2_esjdr")

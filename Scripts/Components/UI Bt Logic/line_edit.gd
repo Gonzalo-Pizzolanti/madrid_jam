@@ -2,12 +2,10 @@ extends LineEdit
 @onready var info_panel: PanelContainer = $InfoPanel
 @onready var info: Label = $InfoPanel/Info
 
-
-
 func _on_text_submitted(new_text: String) -> void:
 	if (new_text != null and new_text != ""):
 		print("Cambiado")
-		PlayerName.username = new_text
+		PlayerInfo.username = new_text
 		clear()
 		placeholder_text = new_text
 		info_panel.visible = true; 
@@ -24,5 +22,5 @@ func _on_text_submitted(new_text: String) -> void:
 
 
 func _on_intro_ui_ready() -> void:
-	placeholder_text = PlayerName.username
+	placeholder_text = PlayerInfo.username
 	pass # Replace with function body.
