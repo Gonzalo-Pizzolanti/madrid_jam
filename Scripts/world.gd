@@ -7,4 +7,3 @@ func _input(event):
 		if event.keycode == KEY_ESCAPE:
 			print("Exit Menu")
 			get_tree().change_scene_to_packed(MENU)
-		
