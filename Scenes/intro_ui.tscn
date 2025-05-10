@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv3ueybty0dm6"]
+[gd_scene load_steps=4 format=3 uid="uid://bv3ueybty0dm6"]
 
 [ext_resource type="PackedScene" uid="uid://beuab48co2of0" path="res://Scenes/Components/start_bt.tscn" id="1_w6bm0"]
 [ext_resource type="PackedScene" uid="uid://bwkwn2tr4t65t" path="res://Scenes/Components/exit_bt.tscn" id="2_blowu"]
+[ext_resource type="PackedScene" uid="uid://bxraxfpamf2v" path="res://Scenes/Components/line_edit.tscn" id="3_ejowa"]
 
 [node name="IntroUI" type="Node2D"]
 
@@ -16,3 +17,18 @@ offset_left = 139.0
 offset_top = 389.0
 offset_right = 396.0
 offset_bottom = 457.0
+
+[node name="LineEdit" parent="." instance=ExtResource("3_ejowa")]
+offset_left = 851.0
+offset_top = 526.0
+offset_right = 1071.0
+offset_bottom = 565.0
+
+[node name="Label" type="Label" parent="LineEdit"]
+layout_mode = 0
+offset_left = -146.0
+offset_right = -8.0
+offset_bottom = 39.0
+text = "Tu nombre es:"
+horizontal_alignment = 1
+vertical_alignment = 1

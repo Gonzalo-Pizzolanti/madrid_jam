@@ -15,6 +15,10 @@ run/main_scene="uid://bv3ueybty0dm6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerName="*res://Scripts/playerName.gd"
+
 [file_customization]
 
 folder_colors={
