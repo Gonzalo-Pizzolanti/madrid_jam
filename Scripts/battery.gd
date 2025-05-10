@@ -1,8 +1,9 @@
 class_name Battery
 extends CharacterBody2D
 
-var player : Player
+const speed_amount_add : int = 400
 var incremental_velocity : float = 5
+
 
 func _on_range_getter_area_entered(area: Area2D) -> void:
 	if area is Collect_Area:
@@ -15,3 +16,4 @@ func remove():
 	teewn_dissapear.tween_property(self, "scale", self.scale / 6, .1)
 	await teewn_dissapear.finished
 	queue_free()
+	
