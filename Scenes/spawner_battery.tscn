@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dif1ktcx67lst"]
+
+[ext_resource type="Script" uid="uid://ci0wqae8dvfh2" path="res://Scripts/spawner_battery.gd" id="1_gbbge"]
+
+[node name="Spawner_battery" type="Node2D"]
+script = ExtResource("1_gbbge")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
