@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export_enum("Slow:800", "Average:1000", "Fast:1200") var speed: int : set = set_speed
 @onready var steerComponent: SteerComponent = $SteerComponent
+@onready var abs_pos_arrow: Node2D = $AbsPosArrow
 
 var is_hover: bool = false
 const mass: float = 10
@@ -20,6 +21,7 @@ func substract_speed(amount_speed_substract: int) -> void:
 
 func _process(_delta: float) -> void:
 	queue_redraw()
+	abs_pos_arrow.look_at(get_global_mouse_position())
 
 func _physics_process(_delta):
 	if !is_hover:
